@@ -54,6 +54,7 @@ export interface TmdbProps {
     created_by:  CreatedByProps;
     networks: NetworksProps[];
     number_of_episodes: number;
+    media_type?: string;
 }
 
 export interface MovieDetailsProps {
@@ -120,5 +121,11 @@ export interface ActorDetails {
     birthday: string | number;
     place_of_birth: number;
     known_for_department: string;
+}
+
+
+export interface ProfilesProps {
+    id: number;
+    file_path: string;
 }
 
