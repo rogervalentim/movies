@@ -129,3 +129,13 @@ export interface ProfilesProps {
     file_path: string;
 }
 
+
+export interface EpisodesProps {
+    id: number;
+    name: string;
+    overview: string;
+    episode_number: number;
+    still_path: string;
+    air_date: number;
+    season_number: number;
+}
