@@ -7,12 +7,14 @@ import { MovieDetails } from "./view/movies/components/movies-details";
 import { Actor } from "./view/actor/actor";
 import { TvShowDetails } from "./view/tv-show/components/tv-show-details";
 import { Footer } from "./components/footer";
+import { ScrollToTop } from "./components/scroll-to-top";
 
 export function App() {
   return (
     <Router>
       <div>
         <Header />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
