@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Eye, Star } from 'lucide-react';
-import { TmdbProps } from '@/types/types';
+import { CardProps } from '@/types/types';
 import film from '@/assets/film.svg';
 
-export function Card({ poster_path, title, name, vote_average }: TmdbProps) {
+export function Card({ poster_path, title, name, vote_average }: CardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
