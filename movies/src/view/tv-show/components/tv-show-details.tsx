@@ -11,13 +11,13 @@ import film from  "@/assets/film.svg";
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/hero";
 import { Badge } from "@/components/ui/badge";
-// import { TvShowEpisodes } from "./components/tv-show-episodes";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Videos } from "@/components/videos";
 import { Cast } from "@/components/cast";
 import { Images } from "@/components/images";
 import { TvShowRecommendations } from "./tv-show-recommendations";
 import { TvShowSimilar } from "./tv-show-similar";
+import { TvShowEpisodes } from "./tv-show-episodes";
 
 
 export function TvShowDetails() {
@@ -180,7 +180,7 @@ export function TvShowDetails() {
   
       {showImages  && <Images />}
       {showVideos && <Videos />}
-      {/* {showEpisodes && <TvShowEpisodes />} */}
+      {showEpisodes && <TvShowEpisodes />}
   </section>
       <TvShowSimilar />
       <TvShowRecommendations />
