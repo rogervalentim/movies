@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Card } from "@/components/ui/card";
 
 
-const apiKey = "fb8991fa7ac1a75e1cd0dd9805822f4c";
+const apiKey = import.meta.env.VITE_API_KEY;
 
 import horror from "@/assets/horror.png"
 import { format } from "date-fns";
@@ -109,7 +109,7 @@ export function Hero() {
                 alt={movie?.title}
               />
             </div>
-            <Card className="w-1/2 px-2 border-none bg-[#121212]">
+            <Card className="w-1/2 px-2 border-none rounded-none bg-[#121212]">
               <div className="flex gap-3">
                 <img
                   src={`https://image.tmdb.org/t/p/w342${movie?.poster_path}`}

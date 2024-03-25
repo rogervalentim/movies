@@ -56,3 +56,69 @@ export interface TmdbProps {
     number_of_episodes: number;
 }
 
+export interface MovieDetailsProps {
+    id: number;
+    title: string;
+    poster_path: string;
+    backdrop_path: string;
+    vote_average: number;
+    overview: string;
+    release_date: number;
+    runtime: number;
+    budget: number;
+    genres: GenresProps[];
+    production_companies: ProductionCompaniesProps[];
+}
+
+export interface TvShowDetailsProps {
+    id: number;
+    name: string;
+    poster_path: string;
+    backdrop_path: string;
+    vote_average: number;
+    overview: string;
+    number_of_seasons: number;
+    genres: GenresProps[];
+    production_companies: ProductionCompaniesProps[];
+    created_by:  CreatedByProps;
+    networks: NetworksProps[];
+    number_of_episodes: number;
+}
+
+export interface BackdropsProps {
+    id: number;
+    file_path: string;
+}
+
+export interface PostersProps {
+   id: number;
+   file_path: string;
+}
+
+export interface ImagesProps {
+    posters: PostersProps[];
+    backdrops: BackdropsProps[];
+}
+
+export interface VideosProps {
+    id: number;
+    name: string;
+    key: string;
+    type: string;
+}
+
+export interface VideosResponse {
+    results: VideosProps[];
+}
+
+export interface ActorDetails {
+    id: number;
+    name: string;
+    character: string;
+    biography: string;
+    profile_path: string | null;
+    birthday: string | number;
+    place_of_birth: number;
+    known_for_department: string;
+}
+
