@@ -6,6 +6,7 @@ import { TvShow } from "./view/tv-show/tv-show";
 import { MovieDetails } from "./view/movies/components/movies-details";
 import { Actor } from "./view/actor/actor";
 import { TvShowDetails } from "./view/tv-show/components/tv-show-details";
+import { Footer } from "./components/footer";
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
           <Route path="/actor/:actorId" element={<Actor />} />
           <Route path="/tv/:tvShowId" element={<TvShowDetails />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
