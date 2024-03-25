@@ -85,7 +85,7 @@ export function Actor() {
 
   return (
       <section className="px-6 py-4">
-        <div className="flex flex-col justify-center gap-4 md:flex-row">
+        <div className="flex flex-col items-center justify-center gap-4 md:flex md:justify-center md:flex-row">
 
           <img 
               className="block cursor-pointer object-cover border-4  border-border h-[270px] w-48 lg:w-72 lg:h-[350px]"
