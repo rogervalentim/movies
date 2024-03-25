@@ -43,7 +43,7 @@ export function Actor() {
     enabled: !!actorId,
 });
 
-  const { data: actorCredits, isLoading: creditsIsLoading } = useQuery<TmdbDataPopularProps[]>({
+  const { data: actorCredits, isLoading: creditsIsLoading } = useQuery<TmdbProps[]>({
       queryKey: ["actor-credits", actorId],
       queryFn: async () => {
           const response = await fetch(

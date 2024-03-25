@@ -5,6 +5,7 @@ import { Movies } from "./view/movies/movies";
 import { TvShow } from "./view/tv-show/tv-show";
 import { MovieDetails } from "./view/movies/components/movies-details";
 import { Actor } from "./view/actor/actor";
+import { TvShowDetails } from "./view/tv-show/components/tv-show-details";
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
           <Route path="/tv" element={<TvShow />} />
           <Route path="/movie/:movieId" element={<MovieDetails />} />
           <Route path="/actor/:actorId" element={<Actor />} />
+          <Route path="/tv/:tvShowId" element={<TvShowDetails />} />
         </Routes>
       </div>
     </Router>
