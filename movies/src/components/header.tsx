@@ -91,7 +91,7 @@ export function Header() {
                             <div className="relative">
                                 <Input 
                                     type="text"  
-                                    placeholder="Procure Cineflix" 
+                                    placeholder="Procure filmes, séries, atores e etc..." 
                                     className="md:w-[400px] lg:w-[600px] h-10"
                                     value={searchData}
                                     onChange={handleSearch} 
@@ -122,16 +122,16 @@ export function Header() {
             </header>
             {inputMobile && (
                 <div className={`w-full bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/60 fixed top-0 z-50`}>
-                    <div className="relative bg-[#121212] p-5 h-14">
+                    <div className="flex justify-between items-center bg-[#121212] px-5 h-14">
                                 <input 
                                     type="text"  
-                                    placeholder="Procure Cineflix" 
-                                    className="w-full 0 bg-[#121212] outline-none"
+                                    placeholder="Procure filmes, séries, atores e etc..." 
+                                    className="w-full 0 text-lg bg-[#121212] outline-none"
                                     value={searchData}
                                     onChange={handleSearch} 
                                     aria-label="Caixa de pesquisa"
                                 />
-                                <span className="absolute inset-y-0 right-0 flex items-center pr-3">
+                                <span className="flex items-center">
                                     <button onClick={closeInputMobile}>
                                     <X className="h-5 w-5 text-gray-400"  /> 
                                     </button>

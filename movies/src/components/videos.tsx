@@ -44,10 +44,14 @@ export function Videos() {
   useEffect(() => {
     if (videos?.results) {
       const types = videos.results.map((video) => video.type);
-      const uniqueTypes = ["Todos", ...Array.from(new Set(types))];      
+      const uniqueTypes = Array.from(new Set(types));
+      if (uniqueTypes.length > 0) {
+        uniqueTypes.unshift("Todos");
+      }
       setUniqueTypes(uniqueTypes);
     }
   }, [videos]);
+  
 
   const handleTypeChange = (value: string): void => {
     setSelectedType(value);
@@ -96,7 +100,7 @@ export function Videos() {
   return (
     <div className="px-5 py-4">
         <div className="flex items-center gap-3">
-        {uniqueTypes.length > 0 ? (
+        {uniqueTypes.length > 0  ? (
           <div className="flex"> 
             <Select value={selectedType} onValueChange={handleTypeChange}>
               <SelectTrigger className="w-[150px]">

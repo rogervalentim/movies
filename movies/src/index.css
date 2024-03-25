@@ -55,7 +55,7 @@
     @apply border-border;
   }
   body {
-    @apply dark bg-background text-foreground;
+    @apply dark bg-background text-foreground antialiased;
   }
 }
 
@@ -73,3 +73,4 @@
 ::-webkit-scrollbar-thumb {
   background-color: #888; 
 }
+
