@@ -23,6 +23,7 @@ export function Hero({tvShowDetails, movieDetails}: HeroProps) {
     return `${hours}h ${remainingMinutes}min`;
 }
 
+const messageOverviewNotFound = movieDetails?.id ? "Esse filme não tem sinopse" : "Essa série não tem sinopse"
 
     return (
         <section>
@@ -123,7 +124,7 @@ export function Hero({tvShowDetails, movieDetails}: HeroProps) {
           <Separator className="mt-2" />
           <ScrollArea className="max-h-[250px] overflow-y-auto px-2 py-2">
            <h2 className="text-xl text-primary">Sinopse</h2>
-            <p className="text-muted-foreground text-base py-2">{tvShowDetails?.overview === "" ? "Essa série não tem sinopse" || "Esse filme não tem sinopse" : tvShowDetails?.overview || movieDetails?.overview }</p>
+            <p className="text-muted-foreground text-base py-2">{tvShowDetails?.overview === "" || movieDetails?.overview === "" ? messageOverviewNotFound : tvShowDetails?.overview || movieDetails?.overview }</p>
           </ScrollArea>
     </Card>
     

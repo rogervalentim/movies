@@ -12,19 +12,17 @@ import { ScrollToTop } from "./components/scroll-to-top";
 export function App() {
   return (
     <Router>
-      <div>
-        <Header />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/tv" element={<TvShow />} />
-          <Route path="/movie/:movieId" element={<MovieDetails />} />
-          <Route path="/actor/:actorId" element={<Actor />} />
-          <Route path="/tv/:tvShowId" element={<TvShowDetails />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Header />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/tv" element={<TvShow />} />
+        <Route path="/movie/:movieId" element={<MovieDetails />} />
+        <Route path="/actor/:actorId" element={<Actor />} />
+        <Route path="/tv/:tvShowId" element={<TvShowDetails />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
