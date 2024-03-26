@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Input } from "./ui/input";
 import { SearchProps } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
@@ -79,11 +79,11 @@ export function Header() {
         <>
            
            <header className={`sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 ${inputMobile ? 'hidden' : ''}`}>
-                <div className="p-5 h-12 flex justify-between border-b border-border/40 items-center flex-row">
+                <div className="px-5 h-12 flex justify-between border-b border-border/40 items-center flex-row">
                     <div className="flex items-center gap-6">
-                        <Link to="/" className="flex items-center space-x-2">
+                        <NavLink to="/" className="flex items-center space-x-2">
                             <span className="text-lg lg:text-xl font-bold">Roger's Cine</span>
-                        </Link>
+                        </NavLink>
     
                     </div>
                     {!isMobile && (
@@ -115,8 +115,8 @@ export function Header() {
                         <button onClick={toggleInputMobile}>
                             <Search className="h-5 w-5 text-gray-400 md:hidden lg:hidden" /> 
                         </button>
-                        <Link to="/movies" className="text-foreground/60 hover:text-foreground text-base lg:text-lg">Filmes</Link>
-                        <Link to="/tv" className="text-foreground/60 hover:text-foreground text-base lg:text-lg">Séries</Link>
+                        <NavLink to="/movies" className="text-foreground/60 hover:text-foreground text-base lg:text-lg">Filmes</NavLink>
+                        <NavLink to="/tv" className="text-foreground/60 hover:text-foreground text-base lg:text-lg">Séries</NavLink>
                     </div>
                 </div>
             </header>

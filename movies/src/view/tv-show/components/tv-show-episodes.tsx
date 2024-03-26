@@ -94,7 +94,10 @@ export function TvShowEpisodes() {
               />
             )}
             <div className="flex flex-col">
+              <div className="flex items-center gap-3">
+              <p className="text-muted-foreground font-semibold">E{item.episode_number}</p>
               <h3 className="py-2 text-base font-semibold">{item.name}</h3>
+              </div>
               <Separator />
             <p className="py-1 text-sm text-zinc-300">
               {item.overview === "" ? "Episódio sem descrição" : item.overview}

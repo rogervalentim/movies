@@ -129,7 +129,11 @@ export function Videos() {
               <X className="text-2xl text-white" />
             </button>
             <div className="flex justify-center items-center">
-              <iframe title="YouTube Video" allow="autoplay; encrypted-media" className="max-w-full w-[700px] h-screen m-5 lg:m-20 border-none" src={`https://www.youtube.com/embed/${selectedVideoId}?autoplay=1`} allowFullScreen></iframe>
+              <iframe 
+              title="YouTube Video" 
+              allow="autoplay; encrypted-media"
+              className="max-w-full w-[800px] h-screen m-5 lg:m-20 border-none"              src={`https://www.youtube.com/embed/${selectedVideoId}?autoplay=1`} 
+              allowFullScreen={true} />
             </div>
           </div>
         </div>

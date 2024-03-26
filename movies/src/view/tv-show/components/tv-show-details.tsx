@@ -127,7 +127,7 @@ export function TvShowDetails() {
       </div>
       <div className="w-full lg:w-[80%]">
       <h2 className="text-primary text-lg">Sinopse</h2>
-        <p className="text-lg text-muted-foreground py-2">{tvShowDetails?.overview === "" ? "Esta série não tem sinopse" : tvShowDetails?.overview}</p>
+        <p className="text-base lg:text-lg  text-muted-foreground py-2">{tvShowDetails?.overview === "" ? "Esta série não tem sinopse" : tvShowDetails?.overview}</p>
 
         <ul className="space-y-4 py-4">
             <li className="flex flex-wrap gap-3">

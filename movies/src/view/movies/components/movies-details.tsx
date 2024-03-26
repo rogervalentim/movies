@@ -119,7 +119,7 @@ export function MovieDetails() {
       />
       <div className="w-full lg:w-[80%]">
         <h2 className="text-primary text-lg">Sinopse</h2>
-        <p className="text-lg text-muted-foreground py-2">{movieDetails?.overview}</p>
+        <p className="text-base lg:text-lg  text-muted-foreground py-2">{movieDetails?.overview}</p>
         <ul className="space-y-4 py-4">
           {movieDetails?.release_date ? (
           <li className="flex gap-3">

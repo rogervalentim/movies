@@ -37,7 +37,7 @@ return (
             <img 
      key={file_path}
     src={`https://image.tmdb.org/t/p/w342${file_path}`} 
-    className="cursor-pointer h-[90vh]  border-4 border-border"
+    className="cursor-pointer h-full  border-4 border-border"
     />
             </div>
           </div>
