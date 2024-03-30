@@ -19,13 +19,14 @@ export function Posters({file_path}: PostersComponentProps) {
 
 return (
     <>
-    
+    <div className="aspect-[2/3]">   
       <img 
      key={file_path}
-    src={`https://image.tmdb.org/t/p/w342${file_path}`} 
-    className="cursor-pointer w-72 h-full  border-4 border-border lg:w-96 "
+    src={`https://image.tmdb.org/t/p/w500${file_path}`} 
+    className="cursor-pointer w-full h-full p-1 bg-zinc-800/60"
     onClick={() => openModal()}
 />
+</div>
       
 {modalOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 flex justify-center items-center z-50">
@@ -34,11 +35,13 @@ return (
               <X className="text-2xl text-white" />
             </button>
             <div className="flex justify-center items-center">
+    <div className="aspect-[2/3]">   
             <img 
      key={file_path}
     src={`https://image.tmdb.org/t/p/w342${file_path}`} 
-    className="cursor-pointer h-fit w-full border-4 border-border"
+    className="w-full h-auto object-cover p-1 bg-zinc-800/60"
     />
+    </div>
             </div>
           </div>
         </div>

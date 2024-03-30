@@ -92,12 +92,12 @@ export function HeroTvShow() {
       </div>
     </div>
   ) : (
- <div className="w-full max-h-[480px]"> 
+ <div className="w-full"> 
     <div className="flex"> 
     <div>       
     <img 
       src={tvShowDetails?.backdrop_path === null  ? horror : `https://image.tmdb.org/t/p/w1280${tvShowDetails?.backdrop_path}`} 
-      className={tvShowDetails?.backdrop_path === null ? "max-h-[480px] w-[1280px]" : ""}
+      className={tvShowDetails?.backdrop_path === null ? "w-full h-full object-cover" : "w-full h-full object-cover"}
       alt={tvShowDetails?.name} 
     />
   </div>

@@ -112,7 +112,7 @@ export function Header() {
                         </div>
                     )}
                     <div className="flex items-center gap-4">
-                        <button onClick={toggleInputMobile}>
+                        <button aria-label="Abrir pesquisa" onClick={toggleInputMobile} >
                             <Search className="h-5 w-5 text-gray-400 md:hidden lg:hidden" /> 
                         </button>
                         <NavLink to="/movies" className="text-foreground/60 hover:text-foreground text-base lg:text-lg">Filmes</NavLink>
@@ -128,12 +128,12 @@ export function Header() {
                                     placeholder="Procure filmes, séries, atores e etc..." 
                                     className="w-full 0 text-lg bg-[#121212] outline-none"
                                     value={searchData}
-                                    onChange={handleSearch} 
-                                    aria-label="Caixa de pesquisa"
+                                    onChange={handleSearch}
+                                    aria-label="Caixa de pesquisa" 
                                 />
                                 <span className="flex items-center">
-                                    <button onClick={closeInputMobile}>
-                                    <X className="h-5 w-5 text-gray-400"  /> 
+                                    <button aria-label="Fechar pesquisa" onClick={closeInputMobile}>
+                                    <X className="h-5 w-5 text-gray-400"   /> 
                                     </button>
                                 </span>
                             </div>

@@ -111,15 +111,16 @@ export function MovieDetails() {
 
         {showOverview && (
           <>
-    <div className="flex px-5 flex-row gap-6 py-4">          
-    <img 
-        src={movieDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w342${movieDetails?.poster_path}`} 
+    <div className="flex px-5 flex-row gap-6 py-4">  
+    <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">    <img 
+        src={movieDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`} 
         alt={movieDetails?.title}
-        className="hidden lg:flex h-[450px] border-4 border-border"
+        className="w-full h-full object-cover p-1 bg-zinc-800"
       />
+      </div>
       <div className="w-full lg:w-[80%]">
         <h2 className="text-primary text-lg">Sinopse</h2>
-        <p className="text-base lg:text-lg  text-muted-foreground py-2">{movieDetails?.overview}</p>
+        <p className="text-base lg:text-lg  text-muted-foreground py-2">{movieDetails?.overview === "" ? "Esta filme não tem sinopse" : movieDetails?.overview}</p>
         <ul className="space-y-4 py-4">
           {movieDetails?.release_date ? (
           <li className="flex gap-3">

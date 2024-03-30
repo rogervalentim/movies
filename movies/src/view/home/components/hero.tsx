@@ -100,12 +100,12 @@ export function Hero() {
       </Link>
     ) : (
       <Link to={`/movie/${movie?.id}`}>
-        <div className="w-full max-h-[480px]">
+        <div className="w-full">
           <div className="flex">
             <div>
               <img
                 src={movie?.backdrop_path === null ? horror : `https://image.tmdb.org/t/p/w1280${movie?.backdrop_path}`}
-                className={movie?.backdrop_path === null ? "max-h-[480px] w-[1280px]" : ""}
+                className={movie?.backdrop_path === null ? "w-full h-full object-cover" : "w-full h-full object-cover"}
                 alt={movie?.title}
               />
             </div>

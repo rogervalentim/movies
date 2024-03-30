@@ -43,8 +43,8 @@ export function Cast() {
                          <CarouselItem  className="relative w-40 basis-1/3 md:basis-1/4 md:w-52 lg:w-64">
           
                              <img
-                  className="cursor-pointer border-4 border-border w-36 h-[250px] md:w-52 md:h-[300px] lg:w-64 lg:h-[350px]"
-                  src={actor?.profile_path === null ? actorImg : `https://image.tmdb.org/t/p/w342${actor?.profile_path}`} alt={actor?.character} />
+          className="cursor-pointer w-full h-full object-cover p-1 bg-zinc-800/60"
+          src={actor?.profile_path === null ? actorImg : `https://image.tmdb.org/t/p/w500${actor?.profile_path}`} alt={actor?.character} />
                 
                                 <p className="text-white text-base w-36 lg:text-lg lg:w-40 mt-2">
                                    {actor?.name}

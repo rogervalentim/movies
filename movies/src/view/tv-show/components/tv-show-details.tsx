@@ -117,12 +117,10 @@ export function TvShowDetails() {
         {showOverview && (
           <>
           <div className="flex lg:px-5 gap-6 py-4">
-            
-            <div>
-          <img 
-        src={tvShowDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w342${tvShowDetails?.poster_path}`} 
+      <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">    <img 
+        src={tvShowDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w500${tvShowDetails?.poster_path}`} 
         alt={tvShowDetails?.name}
-        className="hidden lg:flex h-[450px] border-4 border-border"
+        className="w-full h-full object-cover p-1 bg-zinc-800"
       />
       </div>
       <div className="w-full lg:w-[80%]">
