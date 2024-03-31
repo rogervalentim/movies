@@ -3,11 +3,6 @@ import { useParams } from "react-router-dom";
 import { TvShowDetailsProps } from "@/types/types";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Skeleton } from "@/components/ui/skeleton";
-
-const apiKey = import.meta.env.VITE_API_KEY;
-
-import film from  "@/assets/film.svg";
-
 import { useState, useEffect } from "react";
 import { Hero } from "@/components/hero";
 import { Badge } from "@/components/ui/badge";
@@ -18,7 +13,9 @@ import { Images } from "@/components/images";
 import { TvShowRecommendations } from "./tv-show-recommendations";
 import { TvShowSimilar } from "./tv-show-similar";
 import { TvShowEpisodes } from "./tv-show-episodes";
+import { Film } from "lucide-react";
 
+const apiKey = import.meta.env.VITE_API_KEY;
 
 export function TvShowDetails() {
   const { tvShowId } = useParams();
@@ -113,17 +110,26 @@ export function TvShowDetails() {
   <ToggleGroupItem value="Vídeos" disabled={showVideos} onClick={toggleVideos}>Vídeos</ToggleGroupItem>
 </ToggleGroup>
 
-
         {showOverview && (
           <>
           <div className="flex lg:px-5 gap-6 py-4">
-      <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">    <img 
-        src={tvShowDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w500${tvShowDetails?.poster_path}`} 
+      <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">    
+      
+      {tvShowDetails?.poster_path ? (
+        <img 
+        src={`https://image.tmdb.org/t/p/w500${tvShowDetails?.poster_path}`} 
         alt={tvShowDetails?.name}
         className="w-full h-full object-cover p-1 bg-zinc-800"
-      />
+      /> 
+        ) : (
+          <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+            <Film
+            className="h-full w-full object-cover text-zinc-500"                          
+          />
+         </div>
+        )}
       </div>
-      <div className="w-full lg:w-[80%]">
+      <div className="w-full px-5 lg:w-[80%]">
       <h2 className="text-primary text-lg">Sinopse</h2>
         <p className="text-base lg:text-lg  text-muted-foreground py-2">{tvShowDetails?.overview === "" ? "Esta série não tem sinopse" : tvShowDetails?.overview}</p>
 

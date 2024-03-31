@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import { Loader } from "lucide-react";
+import { Film, Loader } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { EpisodesProps } from "@/types/types";
-import film from "../../../assets/film.svg";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
@@ -87,10 +86,8 @@ export function TvShowEpisodes() {
                 alt={item.name}
               />
             ) : (
-              <img
-                src={film}
+              <Film
                 className="cursor-pointer border-border border-4 w-full h-[190px]"
-                alt="image not found"
               />
             )}
             <div className="flex flex-col">

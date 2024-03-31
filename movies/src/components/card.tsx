@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Eye, Star } from 'lucide-react';
+import { Eye, Film, Star } from 'lucide-react';
 import { CardProps } from '@/types/types';
-import film from '@/assets/film.svg';
 
 export function Card({ poster_path, title, name, vote_average }: CardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -13,11 +12,18 @@ export function Card({ poster_path, title, name, vote_average }: CardProps) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img
-          src={poster_path === null ? film : `https://image.tmdb.org/t/p/w500/${poster_path}`}
-          alt={title || name}
-          className="cursor-pointer w-full h-full object-cover p-1 bg-zinc-800/60"
-        />
+        {poster_path ? (
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+            alt={title || name}
+            className="cursor-pointer w-full h-full object-cover p-1 bg-zinc-800/60" />
+        ) : (
+          <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+            <Film
+            className="h-full w-full object-cover text-zinc-500"                          
+          />
+         </div>
+        )}
         {isHovered && (
           <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-60">
             <div className="flex flex-col justify-center items-center">

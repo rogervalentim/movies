@@ -2,9 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { MovieDetailsProps } from "@/types/types";
 import { useParams } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-
 import { useState, useEffect } from "react";
-import film from "@/assets/film.svg";
 import { format } from "date-fns";
 import { Hero } from "@/components/hero";
 import { MoviesSimilar } from "./movies-similar";
@@ -14,7 +12,7 @@ import { Images } from "@/components/images";
 import { Videos } from "@/components/videos";
 import { Cast } from "@/components/cast";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import { Film } from "lucide-react";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -112,13 +110,22 @@ export function MovieDetails() {
         {showOverview && (
           <>
     <div className="flex px-5 flex-row gap-6 py-4">  
-    <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">    <img 
-        src={movieDetails?.poster_path === null ? film : `https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`} 
+    <div className="aspect-[2/3] max-w-[350px] flex-shrink-0 mr-12 hidden lg:block">   
+        {movieDetails?.poster_path ? (
+        <img 
+        src={`https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`} 
         alt={movieDetails?.title}
         className="w-full h-full object-cover p-1 bg-zinc-800"
-      />
+      /> 
+        ) : (
+          <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+            <Film
+            className="h-full w-full object-cover text-zinc-500"                          
+          />
+         </div>
+        )}
       </div>
-      <div className="w-full lg:w-[80%]">
+      <div className="w-full px-5 lg:w-[80%]">
         <h2 className="text-primary text-lg">Sinopse</h2>
         <p className="text-base lg:text-lg  text-muted-foreground py-2">{movieDetails?.overview === "" ? "Esta filme não tem sinopse" : movieDetails?.overview}</p>
         <ul className="space-y-4 py-4">

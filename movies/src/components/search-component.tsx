@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import film from "../assets/film.svg";
 import { SearchProps } from "@/types/types";
 import { Separator } from "./ui/separator";
 import { ScrollArea } from "./ui/scroll-area";
-import { MoreHorizontal } from "lucide-react";
+import { Film, MoreHorizontal, User } from "lucide-react";
 
 interface SearchPropsComponent {
   searchResults: SearchProps[];
@@ -38,19 +37,22 @@ export function SearchComponent({
             className="w-full"
           >
             <div className="flex gap-4 w-full items-center py-1 hover:bg-zinc-800">
-              {result.profile_path === null || result.poster_path === null ? (
-                <img src={film} alt={result.name} className="h-14 w-14 lg:h-20 lg:w-20" />
+              {result.profile_path === null ? (
+               <User
+                className="h-14 w-14 text-zinc-500 lg:h-20 lg:w-20"
+               />
+            ) : result.poster_path === null ? (
+              <Film
+                className="h-14 w-14 text-zinc-500 lg:h-20 lg:w-20"
+              />
               ) : (
                 <img
-                  src={`https://image.tmdb.org/t/p/w185${
-                    result?.poster_path || result?.profile_path
-                  }` || `https://image.tmdb.org/t/p/w185${
-                    result?.profile_path
-                  }`}
-                  className="h-14 w-14  lg:h-20 lg:w-20"
+                  src={`https://image.tmdb.org/t/p/w185${result.poster_path || result.profile_path}`}
+                  className="h-14 w-14 lg:h-20 lg:w-20"
                   alt={result.title || result.name}
                 />
-              )}
+             )}
+
               <div className="flex flex-col">
                 <p className="w-64 text-white  text-base lg:text-lg">
                   {result.name || result.title}
@@ -75,4 +77,3 @@ export function SearchComponent({
     </div>
   );
 }
-

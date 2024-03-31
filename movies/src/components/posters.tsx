@@ -39,7 +39,7 @@ return (
             <img 
      key={file_path}
     src={`https://image.tmdb.org/t/p/w342${file_path}`} 
-    className="w-full h-auto object-cover p-1 bg-zinc-800/60"
+    className="w-full object-cover p-1 bg-zinc-800/60"
     />
     </div>
             </div>

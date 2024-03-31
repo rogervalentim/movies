@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom"
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import actorImg from "@/assets/user.svg"
 import { ActorDetails } from "@/types/types";
+import { User } from "lucide-react";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -41,11 +41,21 @@ export function Cast() {
                      {cast.map(actor => (
                          <Link to={`/actor/${actor.id}`} key={actor?.id}>
                          <CarouselItem  className="relative w-40 basis-1/3 md:basis-1/4 md:w-52 lg:w-64">
-          
-                             <img
-          className="cursor-pointer w-full h-full object-cover p-1 bg-zinc-800/60"
-          src={actor?.profile_path === null ? actorImg : `https://image.tmdb.org/t/p/w500${actor?.profile_path}`} alt={actor?.character} />
-                
+                       <div className="aspect-[2/3]">
+                      {actor?.profile_path ? (
+                      <img 
+                      className="cursor-pointer w-full h-full object-cover p-1 bg-zinc-800/60"
+                      src={`https://image.tmdb.org/t/p/w500${actor?.profile_path}`} 
+                      alt={actor?.name} />
+                       ) :  (
+                        <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+                           <User 
+                            className="h-full w-full object-cover text-zinc-500"                          
+                       />
+                         </div>
+                       )
+                      }
+                      </div>
                                 <p className="text-white text-base w-36 lg:text-lg lg:w-40 mt-2">
                                    {actor?.name}
                                 </p>                               
